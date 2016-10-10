@@ -1,0 +1,123 @@
+﻿<Window x:Class="Ksora.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ksora"
+        mc:Ignorable="d"
+      x:Name="main" Title="MyShop" Height="418.5" Width="700" WindowStartupLocation="CenterScreen" Background="Green" WindowState="Normal" >
+    <Grid Background="#FAFAFA" >
+        <ToolBarPanel HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="135" Background="Green" >
+            <Button x:Name="bt_Inicio" Content="Inicio" HorizontalAlignment="Center" Width="115" Height="70" BorderThickness="1,2" Click="button_Click" BorderBrush="#FF707070" Cursor="Hand" Margin="0,14,0,0">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFABB2A7" Offset="0"/>
+                        <GradientStop Color="#FF468918" Offset="1"/>
+                        <GradientStop Color="#FF96CE6F" Offset="0.484"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+
+
+            </Button>
+            <Button x:Name="bt_Buscar" Content="Buscar" HorizontalAlignment="Center" Width="115" Height="70" BorderThickness="1,1,1,2" Click="bt_Buscar_Click" Cursor="Hand">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFABB2A7" Offset="0"/>
+                        <GradientStop Color="#FF468918" Offset="1"/>
+                        <GradientStop Color="#FF96CE6F" Offset="0.484"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+
+            </Button>
+            <Button x:Name="bt_Inventario" Content="Inventario" HorizontalAlignment="Center" Width="115" Height="70" BorderThickness="1,1,1,2" Click="button2_Click" Cursor="Hand">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFABB2A7" Offset="0"/>
+                        <GradientStop Color="#FF468918" Offset="1"/>
+                        <GradientStop Color="#FF96CE6F" Offset="0.484"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="bt_Actualizar" Content="Actualizar" HorizontalAlignment="Center" Width="115" Height="70" BorderThickness="1,1,1,2" Click="bt_Actualizar_Click" Cursor="Hand">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFABB2A7" Offset="0"/>
+                        <GradientStop Color="#FF468918" Offset="1"/>
+                        <GradientStop Color="#FF96CE6F" Offset="0.484"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="bt_Ajustes" Content="Ajustes" HorizontalAlignment="Center" Width="115" Height="70" BorderThickness="1,1,1,2" Click="bt_Ajustes_Click" Cursor="Hand">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFABB2A7" Offset="0"/>
+                        <GradientStop Color="#FF468918" Offset="1"/>
+                        <GradientStop Color="#FF96CE6F" Offset="0.484"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </ToolBarPanel>
+        <Grid Name="gInicio" Background="#FAFAFA"  HorizontalAlignment="Right"  Height="377" VerticalAlignment="Top" Width="515" Visibility="Visible" Margin="0,0,5,0">
+            <Label  Content="Se visualizara el reporte + la herramienta de punto de venta" FontSize="25"  HorizontalAlignment="Center"/>
+            <Button x:Name="Bt_inicio" Content="Venta" Width="50" Height="30" VerticalAlignment="Bottom" Click="Bt_inicio_Click" Margin="242,0,223,32"/>
+        </Grid>
+        <Grid Name="gBuscar" Background="#FAFAFA"  HorizontalAlignment="Right"  Height="377" VerticalAlignment="Top" Width="515" Visibility="Hidden">
+            <Label  Content="VENTANA #2" FontSize="48"  HorizontalAlignment="Center"/>
+            <Label  Content="consulta de productos" FontSize="48"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Name="gInventario" Background="#FAFAFA"  HorizontalAlignment="Right"  Height="377" VerticalAlignment="Top" Width="515" Visibility="Hidden">
+            <Label  Content="VENTANA #3" FontSize="48"  HorizontalAlignment="Center"/>
+            <Label  Content="Lo del inventario, o anexarlo a la ventana (inicio) y que sea una ventana independiente" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Name="gActualizar"  Background="#FAFAFA" HorizontalAlignment="Right"  Height="377" VerticalAlignment="Top" Width="515" Visibility="Hidden">
+            <StackPanel>
+                <Grid x:Name="gEncabezado" Background="Green" Height="28">
+                    <Label HorizontalAlignment="Center" Content="Control de productos" FontSize="15"/>
+                </Grid>
+                <Grid x:Name="gContenido"  Height="200">
+                    <StackPanel Margin="144,25,121,30" RenderTransformOrigin="-0.057,-0.247" Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Margin="4">
+                            <Label x:Name="lbl_ID" Content="ID" HorizontalAlignment="Left" Width="70"/>
+                            <TextBox x:Name="txt_Id" HorizontalAlignment="Right" Width="150" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="4">
+                            <Label x:Name="lbl_Nombre" Content="Nombre" HorizontalAlignment="Left" Width="70"/>
+                            <TextBox x:Name="txt_Nombre" HorizontalAlignment="Right" Width="150" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="4">
+                            <Label x:Name="lbl_Categoria" Content="Categoria" Width="70" />
+                            <ComboBox Width="70" Margin="80,0,0,0">
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="4">
+                            <Label x:Name="lbl_Cantidad" Content="Cantidad" Width="70"/>
+                            <TextBox HorizontalAlignment="Right" Width="150" />
+                        </StackPanel>
+
+
+
+                    </StackPanel>
+
+
+
+                </Grid>
+                <Grid x:Name="gPie" Background="#FAFAFA" Height="50">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                        <Button x:Name="btn_Agregar"  Height="35" Width="50" Content="Agregar"  Margin="0,0,3,0"/>
+                        <Button x:Name="btn_Actualizar"  Height="35" Width="50" Content="Actualizar" Margin="0,0,3,0"/>
+                        <Button x:Name="btn_Borrar"  Height="35" Width="50" Content="Borrrar"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
+        <Grid Name="gAjustes" Background="#FAFAFA"  HorizontalAlignment="Right"  Height="377" VerticalAlignment="Top" Width="515" Visibility="Hidden">
+            <Label  Content="VENTANA #5" FontSize="48"  HorizontalAlignment="Center"/>
+            <Label  Content="Preferencias del usuario, contacto y demas" FontSize="26"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+    </Grid>
+
+</Window>
